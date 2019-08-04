@@ -7,7 +7,7 @@ var apiName = 'lupin';
 
 var api = new Controller(apiName);
 
-api.path('POST', '/box', postBox);
-api.path('GET', '/box/:name', getBox);
+api.path('POST', '/boxes', postBox);
+api.path('GET', '/boxes/:name', getBox);
 
 api.listen();
