@@ -13,3 +13,7 @@ exports.boxTO = (doc) => {
         content: doc.content
     }
 }
+
+exports.update = (data) => {
+    return {$set: {content: data.content}};
+}
