@@ -14,11 +14,11 @@ exports.do = (req) => {
     return new Promise((success, failure) => {
 
         // Validation
-        if (!req.param.name) { failure({ code: 400, message: '"name" is a required path param' }); return; }
+        if (!req.params.name) { failure({ code: 400, message: '"name" is a required path param' }); return; }
 
         return MongoClient.connect(config.mongoUrl, function (err, db) {
 
-            db.db(config.dbName).collection(config.collections.boxes).find({ name: req.param.name }).toArray(function (err, array) {
+            db.db(config.dbName).collection(config.collections.boxes).find({ name: req.params.name }).toArray(function (err, array) {
 
                 db.close();
 
